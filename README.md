@@ -10,7 +10,7 @@ This application showcases a straightforward LLM chat application developed with
 
 ## Build
 ### Using Maven
-
+- Clone this repository
 - Download LLM GGUF model from huggingface or other source
 - Use mvn package to build the module into jar file
 ```shell
@@ -22,6 +22,7 @@ java -Dllamacpp.model=<path to gguf model> -jar <path to jar that is build from 
 ```
 
 ### Using Docker
+- Clone this repository
 - Download LLM GGUF model from huggingface or other source, and place the downloaded model in the "model" folder.
 - Run docker build
 ```shell

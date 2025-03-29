@@ -31,14 +31,16 @@ public class LlamaModelComponent {
 	public void init()	{
 		
 		//Nullify log
-		LlamaModel.setLogger(LogFormat.TEXT, (level,message)->{
+		LlamaModel.setLogger(null, (level,message)->{
 
 		});
 		
 		//Prepare model params
-		ModelParameters params=new ModelParameters().setNThreads(cpuCount)
-				.setNCtx(nCtx)
-				.setModelFilePath(modelPath);
+		ModelParameters params=new ModelParameters()
+				.setThreads(cpuCount)
+				.setCtxSize(nCtx)
+				.disableLog()
+				.setModel(modelPath);
 
 		modelLlm=new LlamaModel(params);
 	}
